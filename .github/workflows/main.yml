@@ -23,7 +23,7 @@ jobs:
 
     env:
      MONGO_URI: mongodb://localhost:27017/khoidb
-     JWT_SECRET= R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
+     JWT_SECRET: R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
      NODE_ENV: test
 
     steps:
