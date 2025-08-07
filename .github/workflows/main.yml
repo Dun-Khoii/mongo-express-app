@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-last:
+    runs-on: ubuntu-lastest:
 
     services:
       mongo:
