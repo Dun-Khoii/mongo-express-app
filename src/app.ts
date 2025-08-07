@@ -11,10 +11,6 @@ const app = express();
 
 app.use(express.json());
 
-
-app.use("/", (req, res) => {
-  res.send("Hello");
-});
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -22,5 +18,9 @@ app.use("/api/images", imageRoutes);
 
 app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
+
+app.use("/", (req, res) => {
+  res.send("HELLO THẦY TRÍ");
+});
 
 export default app;
