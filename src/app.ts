@@ -6,7 +6,6 @@ import imageRoutes from "./routes/image.routes";
 
 import likeRoutes from "./routes/like.routes";
 import commentRoutes from "./routes/comment.routes";
-import path from "path/win32";
 
 const app = express();
 
@@ -14,8 +13,7 @@ app.use(express.json());
 
 
 app.use("/", (req, res) => {
-
-    res.sendFile(path.join(__dirname, "../page/index.html"));
+  res.send("Hello");
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
