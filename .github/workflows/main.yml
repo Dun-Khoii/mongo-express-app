@@ -15,16 +15,16 @@ jobs:
         image: mongo:6.0
         ports:
           - 27017:27017
-      options: >-
-        --health-cmd="mongosh --eval 'db.stats()'"
-        --health-interval=10s
-        --health-timeout=5s
-        --health-retries=5
+        healthcheck:
+          test: ["CMD", "mongosh", "--eval", "db.stats()"]
+          interval: 10s
+          timeout: 5s
+          retries: 5
 
     env:
-     MONGO_URI: mongodb://localhost:27017/khoidb
-     JWT_SECRET: R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
-     NODE_ENV: test
+      MONGO_URI: mongodb://localhost:27017/khoidb
+      JWT_SECRET: R2kSUWXmK9rU28EhYxirY0DZ40RTr5ju0ppH7bkCSwXmALwoHh
+      NODE_ENV: test
 
     steps:
       - name: Checkout repo
@@ -43,5 +43,3 @@ jobs:
 
       - name: Run tests
         run: npm run test
-      
-     
